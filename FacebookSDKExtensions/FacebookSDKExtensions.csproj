@@ -89,13 +89,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientExtensions\AuthOperations.cs" />
     <Compile Include="ClientExtensions\FeedOperations.cs" />
     <Compile Include="ClientExtensions\MediaOperations.cs" />
     <Compile Include="ClientExtensions\UserOperations.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Mappers\FacebookAlbumMappers.cs" />
+    <Compile Include="Mappers\FacebookAuthMappers.cs" />
     <Compile Include="Mappers\FacebookResultMappers.cs" />
     <Compile Include="Mappers\FacebookUserMappers.cs" />
+    <Compile Include="Models\AuthorizeResult.cs" />
     <Compile Include="Models\FacebookAlbum.cs" />
     <Compile Include="Models\FacebookPhoto.cs" />
     <Compile Include="Models\FacebookUser.cs" />
