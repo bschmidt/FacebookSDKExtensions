@@ -17,8 +17,7 @@ namespace FacebookSDKExtensions.Mappers
 
             var authResult = new AuthorizeResult();
             authResult.AccessToken = authorizeResultDict.ToString("access_token");
-            authResult.ExpiresOn = authorizeResultDict.ToDateTime("expires_on");
-            authResult.RefreshToken = authorizeResultDict.ToString("refresh_token");
+            authResult.ExpiresInSecs = authorizeResultDict.ToInt("expires");
 
             return authResult;
         }

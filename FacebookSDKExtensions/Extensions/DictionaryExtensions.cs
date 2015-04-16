@@ -13,7 +13,19 @@ namespace FacebookSDKExtensions.Extensions
             string value = "";
 
             if (dictionary.Keys.Contains(key))
-                value = (string)dictionary[key];
+                value = dictionary[key].ToString();
+
+            return value;
+        }
+
+        public static int ToInt(this IDictionary<string, object> dictionary, string key)
+        {
+            int value = 0;
+
+            if (dictionary.Keys.Contains(key))
+            {
+                value = Int32.Parse(dictionary[key].ToString());
+            }
 
             return value;
         }
@@ -33,7 +45,7 @@ namespace FacebookSDKExtensions.Extensions
             DateTime value = new DateTime();
 
             if (dictionary.Keys.Contains(key))
-                value = DateTime.Parse((string)dictionary[key]);
+                value = DateTime.Parse(dictionary[key].ToString());
 
             return value;
         }

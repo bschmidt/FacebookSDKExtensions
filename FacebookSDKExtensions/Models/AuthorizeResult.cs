@@ -9,7 +9,6 @@ namespace FacebookSDKExtensions.Models
     public class AuthorizeResult
     {
         public string AccessToken { get; set; }
-        public DateTime ExpiresOn { get; set; }
-        public string RefreshToken { get; set; }
+        public int ExpiresInSecs { get; set; }
     }
 }

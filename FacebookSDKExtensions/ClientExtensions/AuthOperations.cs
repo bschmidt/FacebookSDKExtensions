@@ -19,7 +19,20 @@ namespace FacebookSDKExtensions.ClientExtensions
             accessParameters["redirect_uri"] = callbackUrl;
             accessParameters["code"] = code;
 
-            var result = client.Post("oauth/access_token", accessParameters) as JsonObject;
+            var result = client.Get("oauth/access_token", accessParameters) as JsonObject;
+
+            return FacebookAuthMappers.MapToAuthorizeResult(result);
+        }
+
+        public async static Task<AuthorizeResult> GetAccessTokenAsync(this FacebookClient client, string code, string callbackUrl)
+        {
+            Dictionary<string, object> accessParameters = new Dictionary<string, object>();
+            accessParameters["client_id"] = client.AppId;
+            accessParameters["client_secret"] = client.AppSecret;
+            accessParameters["redirect_uri"] = callbackUrl;
+            accessParameters["code"] = code;
+
+            var result = await client.GetTaskAsync("oauth/access_token", accessParameters) as JsonObject;
 
             return FacebookAuthMappers.MapToAuthorizeResult(result);
         }
